@@ -1,0 +1,6 @@
+-- my_project/operations/snapshot_update.yml
+
+version: 2
+
+on-run-start:
+  - "{{ snapshot_update('test_rk_scd2_snapshot', 'test_rk', 'CURRENT_TIMESTAMP()','int_sales','dwh_sales') }}"

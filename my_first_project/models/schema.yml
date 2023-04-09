@@ -1,0 +1,35 @@
+
+version: 2
+
+sources:
+  - name: source_int_tables
+    database: datamax_16541
+    schema: int_sales
+    tables:
+       - name: test_rk
+  - name: source_dwh_tables
+    database: datamax_16541
+    schema: dwh_sales
+    tables:
+       - name: test_rk
+models:
+  - name: my_first_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: name
+        description: "name of employee"
+
+  - name: my_second_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
