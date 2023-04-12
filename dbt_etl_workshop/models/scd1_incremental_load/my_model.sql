@@ -1,6 +1,5 @@
 {% set source_schema = var('source_schema') %}
 {% set source_table = var('source_table') %}
-{% set target_schema = var('target_schema') %}
 {% set target_table = var('target_table') %}
 
 {% set column_list = ['id','name','updated_at'] %}
@@ -17,7 +16,7 @@
 SELECT 
 {{ surrogate_key("id") }} as sid,
   id,
-  name,
+  "name",
   updated_at,
   CURRENT_TIMESTAMP as load_date 
 FROM {{source_schema  }}.{{ source_table }}

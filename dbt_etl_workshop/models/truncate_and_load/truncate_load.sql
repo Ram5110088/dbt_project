@@ -9,8 +9,6 @@
 
 SELECT 
 {{autoincrement_surrogate_key()}} as sid,
-  id,
-  name,
-  updated_at,
+  *,
   CURRENT_TIMESTAMP as load_date 
 FROM {{source_schema  }}.{{ source_table }}
